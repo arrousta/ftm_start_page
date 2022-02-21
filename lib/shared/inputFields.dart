@@ -67,6 +67,7 @@ Container ftmNationalCodeInput(String hintText,
       style: inputFieldTextStyle,
       controller: nationalCodeController,
       keyboardType: TextInputType.number,
+      //add comment for ali3nti
       decoration: InputDecoration(
           hintText: hintText,
           hintStyle: inputFieldHintTextStyle,
