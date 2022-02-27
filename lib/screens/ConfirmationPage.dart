@@ -4,6 +4,7 @@ import '../shared/colors.dart';
 import '../shared/inputFields.dart';
 import 'package:page_transition/page_transition.dart';
 import './SingInPage.dart';
+import 'package:ftm_start_page/screens/DispenserPage.dart';
 
 class ConfirmationPage extends StatefulWidget {
   final String pageTitle;
@@ -28,8 +29,13 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pushReplacementNamed('/signin');
-                Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeft, child: SignInPage(pageTitle: 'SignInPage',)));
-
+                Navigator.pushReplacement(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: SignInPage(
+                          pageTitle: 'SignInPage',
+                        )));
               },
               child: const Text('Sign In', style: contrastText),
             )
@@ -46,8 +52,10 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      const Text('Please wait to receive text message from Us', style: h7),
-                      const Text('Enter Received Code here :', style: taglineText2),
+                      const Text('Please wait to receive text message from Us',
+                          style: h7),
+                      const Text('Enter Received Code here :',
+                          style: taglineText2),
                       ftmConfirmCodeInput('Enter Received Code'),
                     ],
                   ),
@@ -57,10 +65,17 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
                     //TODO : Confirm SMS : after user press Enter button Send Data To Server And Do Confirmation :
                     child: ElevatedButton(
                       onPressed: () {
-
-                        print(confirmCodeController.text); // Print name current value
-                        //Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeft, child: Dashboard()));
-
+                        print(confirmCodeController
+                            .text); // Print name current value
+                        Navigator.pushReplacement(
+                          context,
+                          PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            child: Home(
+                              title: 'Dispenser Page',
+                            ),
+                          ),
+                        );
                       },
                       child: const Text("Send Code"),
                       style: ElevatedButton.styleFrom(
@@ -76,7 +91,6 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
               decoration: authPlateDecoration,
             ),
           ],
-        )
-    );
+        ));
   }
 }

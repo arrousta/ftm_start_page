@@ -69,7 +69,7 @@ class _SignInPageState extends State<SignInPage> {
                         //TODO : SignInPage : after user press Enter button Send Data To Server And Check authentication :
                         onPressed: () {
 
-                          print(nameController.text); // Print name current value
+                          print(personnelCodeController.text); // Print name current value
                           print(passwordController.text); // Print password current value
 
                           // if(authentication == true) {

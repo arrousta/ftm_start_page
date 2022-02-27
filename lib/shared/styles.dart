@@ -51,7 +51,7 @@ const h7 = TextStyle(
     color: Colors.black,
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    fontFamily: 'Poppins');
+    fontFamily: 'Poppins-Regular');
 
 const priceText = TextStyle(
     color: Colors.black,
@@ -87,6 +87,9 @@ const inputFieldPasswordTextStyle = TextStyle(
 const inputFieldHintPaswordTextStyle = TextStyle(
     fontFamily: 'Poppins', color: Color(0xff444444), letterSpacing: 2);
 
+const inputFieldTextStyleDispenser =
+TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w100 , color: Colors.red);
+
 ///////////////////////////////////
 /// BOX DECORATION STYLES
 //////////////////////////////////
@@ -102,6 +105,17 @@ const authPlateDecoration = BoxDecoration(
     ],
     borderRadius: BorderRadiusDirectional.only(
         bottomEnd: Radius.circular(20), bottomStart: Radius.circular(20)));
+
+const dispenserPlateDecoration = BoxDecoration(
+    color: white,
+    boxShadow: [
+      BoxShadow(
+          color: Color.fromRGBO(0, 0, 0, .1),
+          blurRadius: 10,
+          spreadRadius: 5,
+          offset: Offset(0, 1))
+    ],
+    borderRadius: BorderRadiusDirectional.all(Radius.circular(20)));
 
 /////////////////////////////////////
 /// INPUT FIELD DECORATION STYLES
