@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ftm_start_page/screens/PaymentPage.dart';
 import 'package:ftm_start_page/shared/colors.dart';
 import 'package:ftm_start_page/shared/inputFields.dart';
 import 'package:ftm_start_page/widgets/time_and_date.dart';
+import 'package:page_transition/page_transition.dart';
 import '../shared/styles.dart';
 
 enum ShiftName { morning, evening, night }
@@ -308,7 +310,7 @@ class _HomeState extends State<Home> {
                         print(dispenserB2Controller.text); // Print name current value
                         print(dispenserA3Controller.text); // Print name current value
                         print(dispenserB3Controller.text); // Print name current value
-                        //Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeft, child: Home(title: 'Dispenser Page',)));
+                        Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeft, child: Payment(title: 'Payment Page',)));
                       },
                       child: const Text("Next Step"),
                       style: ElevatedButton.styleFrom(

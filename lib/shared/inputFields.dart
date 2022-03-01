@@ -14,17 +14,20 @@ TextEditingController confirmCodeController =
     TextEditingController(); // Confirm SMS Code
 
 TextEditingController dispenserA1Controller =
-    TextEditingController(); // Confirm SMS Code
+    TextEditingController(); // dispenser A1
 TextEditingController dispenserB1Controller =
-    TextEditingController(); // Confirm SMS Code
+    TextEditingController(); // dispenser B1
 TextEditingController dispenserA2Controller =
-    TextEditingController(); // Confirm SMS Code
+    TextEditingController(); // dispenser A2
 TextEditingController dispenserB2Controller =
-    TextEditingController(); // Confirm SMS Code
+    TextEditingController(); // dispenser B2
 TextEditingController dispenserA3Controller =
-    TextEditingController(); // Confirm SMS Code
+    TextEditingController(); // dispenser A3
 TextEditingController dispenserB3Controller =
-    TextEditingController(); // Confirm SMS Code
+    TextEditingController(); // dispenser B3
+
+TextEditingController paymentController =
+TextEditingController(); // dispenser B3
 
 textFieldContainer ftmFullNameTextInput(String hintText,
     {onTap, onChanged, onEditingComplete, onSubmitted}) {
@@ -250,6 +253,25 @@ textFieldContainer ftmDispenser3BInput(String hintText,
     cursorColor: dispenserColor,
     style : inputFieldTextStyleDispenser,
     controller: dispenserB3Controller,
+    keyboardType: TextInputType.number,
+    hintText: hintText,
+    hintStyle: inputFieldTextStyleDispenser,
+    horizontal: 10,
+    vertical: 5,
+    marginTop: 5,
+  );
+}
+
+textFieldContainer ftmPaymentInput(String hintText,
+    {onTap, onChanged, onEditingComplete, onSubmitted}) {
+  return textFieldContainer(
+    onTap: onTap,
+    onChanged: onChanged,
+    onEditingComplete: onEditingComplete,
+    onSubmitted: onSubmitted,
+    cursorColor: dispenserColor,
+    style : inputFieldTextStyleDispenser,
+    controller: paymentController,
     keyboardType: TextInputType.number,
     hintText: hintText,
     hintStyle: inputFieldTextStyleDispenser,
