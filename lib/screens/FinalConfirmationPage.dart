@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:ftm_start_page/screens/FinalConfirmationPage.dart';
+import 'package:ftm_start_page/screens/FinishPage.dart';
 import 'package:ftm_start_page/shared/colors.dart';
 import 'package:ftm_start_page/shared/inputFields.dart';
 import 'package:ftm_start_page/widgets/time_and_date.dart';
 import 'package:page_transition/page_transition.dart';
 import '../shared/styles.dart';
+import 'DispenserPage.dart';
 
 enum ShiftName { morning, evening, night }
 
-class Payment extends StatefulWidget {
-  const Payment({Key? key, required this.title}) : super(key: key);
+class FinalConfirm extends StatefulWidget {
+  const FinalConfirm({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<Payment> createState() => _PaymentState();
+  State<FinalConfirm> createState() => _FinalConfirmState();
 }
 
-class _PaymentState extends State<Payment> {
+class _FinalConfirmState extends State<FinalConfirm> {
   String shiftName = "null";
 
   @override
@@ -49,20 +50,11 @@ class _PaymentState extends State<Payment> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    TimeAndDate(),
-                    SizedBox(
-                      height: 2.0,
-                      width: 330,
-                      child: Divider(
-                        color: Colors.blue.shade700,
-                        thickness: 1.5,
-                      ),
-                    ),
                     Container(
                       alignment: Alignment.center,
-                      height: 40.0,
+                      height: 70.0,
                       child: const Text(
-                        'The total cost of fuel in your shift',
+                        'If there is a mistake in the entered data,\n press the edit key and correct the data',
                         style: h5,
                       ),
                     ),
@@ -80,33 +72,9 @@ class _PaymentState extends State<Payment> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.all(10.0),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text(
-                                  'Total function of your shift: ',
-                                  style: h7,
-                                ),
-                                Container(
-                                  //TODO : Calcute Total function of the shift
-                                  width: 130.0,
-                                  height: 50.0,
-                                  child: CardWidget(
-                                    value: '12345678910',
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      decoration: dispenserPlateDecoration,
+                    const Text(
+                      'Dispenser1',
+                      style: h7,
                     ),
                     Container(
                       margin: const EdgeInsets.all(10.0),
@@ -118,15 +86,126 @@ class _PaymentState extends State<Payment> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Text(
-                                  'Total cost of your shift : ',
+                                  'A',
                                   style: h7,
                                 ),
                                 Container(
-                                  //TODO : Calcute Total cost of the shift
-                                  width: 140.0,
+                                  //TODO : get dispenser1 A Data
+                                  width: 130.0,
                                   height: 50.0,
-                                  child: const CardWidget(
-                                    value: '12345678910',
+                                  child: CardWidget(
+                                    value: '111111111',
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                const Text(
+                                  'B',
+                                  style: h7,
+                                ),
+                                Container(
+                                  //TODO : get dispenser1 B Data
+                                  width: 130.0,
+                                  height: 50.0,
+                                  child: CardWidget(
+                                    value: '111111111',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      decoration: dispenserPlateDecoration,
+                    ),
+                    //-----------------------------------------------------------------------------------------
+                    const Text(
+                      'Dispenser2',
+                      style: h7,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10.0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'A',
+                                  style: h7,
+                                ),
+                                Container(
+                                  //TODO : get dispenser2 A Data
+                                  width: 130.0,
+                                  height: 50.0,
+                                  child: CardWidget(
+                                    value: '22222222',
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                const Text(
+                                  'B',
+                                  style: h7,
+                                ),
+                                Container(
+                                  //TODO : get dispenser2 B Data
+                                  width: 130.0,
+                                  height: 50.0,
+                                  child: CardWidget(
+                                    value: '22222222',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      decoration: dispenserPlateDecoration,
+                    ),
+                    //--------------------------------------------------------------------------------------------------------
+                    const Text(
+                      'Dispenser3',
+                      style: h7,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10.0),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'A',
+                                  style: h7,
+                                ),
+                                Container(
+                                  //TODO : get dispenser3 A Data
+                                  width: 130.0,
+                                  height: 50.0,
+                                  child: CardWidget(
+                                    value: '333333333',
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                const Text(
+                                  'B',
+                                  style: h7,
+                                ),
+                                Container(
+                                  //TODO : get dispenser3 B Data
+                                  width: 130.0,
+                                  height: 50.0,
+                                  child: CardWidget(
+                                    value: '333333333',
                                   ),
                                 ),
                               ],
@@ -156,18 +235,16 @@ class _PaymentState extends State<Payment> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Text(
-                                  'Enter the value of the \ncard reader function',
+                                  'Total function of your shift: ',
                                   style: h7,
-                                  textAlign: TextAlign.center,
-                                ),
-                                const SizedBox(
-                                  width: 18.0,
                                 ),
                                 Container(
-                                  width: 140.0,
+                                  //TODO : Calcute Total function of the shift
+                                  width: 130.0,
                                   height: 50.0,
-                                  padding: const EdgeInsets.all(3),
-                                  child: ftmPaymentInput('Enter Number'),
+                                  child: CardWidget(
+                                    value: '12345678910',
+                                  ),
                                 ),
                               ],
                             ),
@@ -202,19 +279,15 @@ class _PaymentState extends State<Payment> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Text(
-                                  'The amount of cash \n you have to pay  ',
+                                  'Total cost of your shift : ',
                                   style: h7,
-                                  textAlign: TextAlign.center,
-                                ),
-                                const SizedBox(
-                                  width: 18.0,
                                 ),
                                 Container(
-                                  //TODO : Calcute amount of cash have to pay
+                                  //TODO : Calcute Total cost of the shift
                                   width: 140.0,
                                   height: 50.0,
                                   child: const CardWidget(
-                                    value: '12345678910',
+                                    value: '123123123',
                                   ),
                                 ),
                               ],
@@ -228,19 +301,38 @@ class _PaymentState extends State<Payment> {
                     const SizedBox(
                       height: 8.0,
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        //TODO: Send Payment Data and Go to Next Step :
 
-                        print(paymentController.text); // Print name current value
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            //TODO: Go to Edit Again :
 
-                        Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeft, child: FinalConfirm(title: 'Final Confirmation',)));
-                      },
-                      child: const Text("Next Step"),
-                      style: ElevatedButton.styleFrom(
-                        primary: primaryColor,
-                        padding: const EdgeInsets.all(13),
-                      ),
+                            Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeft, child: Home(title: 'Dispenser Page',)));
+                          },
+                          child: const Text("EDIT" , style: TextStyle( fontSize: 15,fontFamily: 'Poppins-Regular',),),
+                          style: ElevatedButton.styleFrom(
+                            primary: primaryColor,
+                            padding: EdgeInsets.symmetric(vertical: 13.0 , horizontal: 30.0),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 50.0,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            //TODO: Finish and Complete :
+
+                            Navigator.pushReplacement(context, PageTransition(type: PageTransitionType.rightToLeft, child: FinishPage(pageTitle: 'Finish Page',)));
+                          },
+                          child: const Text("FINISH" , style: TextStyle( fontSize: 15,fontFamily: 'Poppins-Regular',),),
+                          style: ElevatedButton.styleFrom(
+                            primary: primaryColor,
+                            padding: EdgeInsets.symmetric(vertical: 13.0 , horizontal: 30.0),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

@@ -26,11 +26,11 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           //TODO : add Image for HomePage Start :
-          Image.asset('images/gas.png', width: 220, height: 220),
+          Image.asset('images/ftm.png', width: 260, height: 210),
           Container(
             margin: const EdgeInsets.only(bottom: 10, top: 0),
             //TODO : change the name of Start page And Font Style :
-            child: const Text('FTM.CO', style: logoStyle),
+            child: const Text('Welcome !', style: logoStyle),
           ),
           Container(
             width: 200,
